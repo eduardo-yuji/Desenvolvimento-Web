@@ -1,0 +1,29 @@
+<!--Calcular a idade aproximada de uma pessoa. Exemplo, se uma pessoa nasceu no ano 2000, emitir uma mensagem: Quem nasceu no ano 2001 vai completar 23 anos em 2024-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercício 3</title>
+</head>
+<body>
+
+    <h2>Descubra quantos anos você tem!</h2>
+    <button onclick="verificaIdade()"id="botao">Verificar</button>
+    
+    <section id="resultado">
+
+    </section>
+
+    <script>
+        
+        function verificaIdade(){
+            var anoNascimento = parseInt(prompt("Digite o ano de nascimento: "));
+            var anoAtual = new Date().getFullYear();
+            var idade = anoAtual - anoNascimento;
+
+            document.getElementById("resultado").innerHTML += `<p><br>Você terá <mark>${idade} anos em ${anoAtual}</mark></p>`;
+        }
+    
+    </script>
+
+</body>
+</html>

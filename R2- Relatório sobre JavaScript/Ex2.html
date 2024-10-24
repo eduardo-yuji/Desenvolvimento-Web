@@ -1,0 +1,36 @@
+<!--Utilize as funções: getFullYear, getDay, etc, Para apresentar na tela o Dia, Mês, Ano, dia da Semana, hora, minutos e segundos, como tela abaixo.-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercício 2</title>
+</head>
+<body>
+
+    <h2>Clique no botão abaixo para verificar as informações de data e hora!</h2>
+    <button onclick="dataHora()"id="botao">Verificar</button>
+    
+    <section id="resultado">
+
+    </section>
+
+    <script>
+        function dataHora(){
+            var data = new Date();
+            var dia = data.getDate();
+            var mes = data.getMonth() + 1;
+            var ano = data.getFullYear();
+            var diaSemana = data.getDay();
+            var hora = data.getHours();
+            var minutos = data.getMinutes();
+            var segundos = data.getSeconds();
+
+            var semana = ["Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado"];
+            
+            var meses = new Array('Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro')
+
+            document.getElementById("resultado").innerHTML = "<br>" + "Dia: " + dia + "<br>" + "Mês: " + meses[mes] + "<br>" + "Ano: " + ano + "<br>" + "Dia da Semana: " + semana[diaSemana] + "<br>" + "Hora: " + hora + "<br>" + "Minutos: " + minutos + "<br>" + "Segundos: " + segundos;
+        }
+    </script>
+
+</body>
+</html>
