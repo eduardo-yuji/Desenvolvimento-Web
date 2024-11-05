@@ -1,0 +1,17 @@
+h1 {
+    color: #DDA0DD;
+    text-decoration: underline;
+    text-transform: uppercase
+}
+
+h2 {
+    color: #3366FF;
+    text-decoration: line-through;
+    text-transform: none
+}
+
+p {
+    text-indent: 1cm;
+    line-height: 20px;
+    text-align: center
+}
