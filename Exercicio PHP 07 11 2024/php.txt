@@ -1,0 +1,54 @@
+<?php
+$num = 10;
+
+if ($num > 0) {
+    echo "Valor Positivo";
+} elseif ($num < 0) {
+    echo "Valor Negativo";
+} else {
+    echo "Igual a Zero";
+}
+?>
+
+
+<?php
+$num = 4;
+
+for ($i = 0; $i <= 10; $i++) {
+    echo "$num X $i = " . ($num * $i) . "<br>";
+}
+?>
+
+
+<?php
+$a = 5;
+$b = 4;
+
+if ($a > $b) {
+    echo "$b $a";
+} else {
+    echo "$a $b";
+}
+?>
+
+
+<?php
+$num = 7;
+
+if ($num % 2 == 0) {
+    echo "Número Par";
+} else {
+    echo "Número Ímpar";
+}
+?>
+
+
+<?php
+$raio = 5;
+
+$perimetro = 2 * M_PI * $raio;
+$area = M_PI * pow($raio, 2);
+
+echo "Perímetro: $perimetro<br>";
+echo "Área: $area";
+?>
