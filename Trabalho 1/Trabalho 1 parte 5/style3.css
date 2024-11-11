@@ -24,7 +24,7 @@ label {
     display: block;
 }
 
-input, button {
+input {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -39,10 +39,16 @@ input:focus {
 }
 
 button {
-    background-color: #444;
-    color: white;
+    background-color: gainsboro;
+    color: black;
     border: none;
     cursor: pointer;
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 button:hover {
