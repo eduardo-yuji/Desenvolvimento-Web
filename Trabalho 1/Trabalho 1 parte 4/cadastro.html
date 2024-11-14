@@ -21,7 +21,7 @@
     </nav>
 
     <h2>Dados Pessoais</h2>
-    <form>
+    <form method="post" action="index.html">
         <fieldset>
             <legend>Dados Pessoais</legend>
 
@@ -78,11 +78,12 @@
                 <label for="codigoPaciente">Código de Paciente:</label>
                 <input type="text" id="codigoPaciente" name="codigoPaciente" value="ABC123456" readonly>
             </div>
+            <div>
+                <input type = "hidden" name = "oculto" value = "0">
+            </div>
         </fieldset>
-    </form>
 
-    <h2>Endereço</h2>
-    <form>
+        <h2>Endereço</h2>
         <fieldset>
             <legend>Endereço</legend>
 
@@ -94,6 +95,7 @@
             <div>
                 <label for="tipoLogradouro">Tipo de Logradouro (Obrigatório):</label>
                 <select id="tipoLogradouro" name="tipoLogradouro" required>
+                    <option value="">Selecione uma opção</option>
                     <option value="avenida">Avenida</option>
                     <option value="campo">Campo</option>
                     <option value="condominio">Condomínio</option>
@@ -132,11 +134,7 @@
             </div>
         </fieldset>
 
-
-    </form>
-
-    <h2>Informações Adicionais</h2>
-    <form>
+        <h2>Informações Adicionais</h2>
         <fieldset>
             <legend>Informações Adicionais</legend>
 
@@ -162,9 +160,9 @@
                 <input type="file" id="imagem" name="imagem" accept="image/*">
             </div>
         </fieldset>
+        <button type="submit">Enviar Cadastro</button>
     </form>
 
-    <button type="submit">Enviar Cadastro</button>
 
     <footer>
         <p>Contato: <a href="mailto:clinicaabc@example.com">clinicaabc@gmail.com</a></p>
