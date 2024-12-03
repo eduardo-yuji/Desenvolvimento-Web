@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <title>Exemplo2-Calculadora</title>
+    <script>
+        function ajaxInit() {
+            var xmlhttp;
+            try {
+                xmlhttp = new XMLHttpRequest();
+            } catch (ee) {
+                try {
+                    xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+                } catch (e) {
+                    try {
+                        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                    } catch (e) {
+                        xmlhttp = false;
+                    }
+                }
+            }
+        }
+        return xmlhttp;
+    </script>
+    <script type="text/javascript">
+        function calcular() {
+            ajax = ajaxInit();
+            document.getElementById("resultado").innerHTML = "Calculando...";
+            if (ajax) {
+                ajax.onreadystatechange = resultado;
+                v1 = document.getElementById("v1").value;
+                v2 = document.getElementById("v2").value;
+                url = 'http://127.0.0.1:3000/Exercicio PHP 14 11 2024/Calcular.php?v1=' + v1 + '&v2=' + v2;
+                ajax.open('GET', url, true);
+                ajax.send(null);
+            }
+        }
+
+        function resultado() {
+            if (ajax.readyState == 4) {
+                if (ajax.status == 200) {
+                    document.getElementById("resultado").innerHTML = ajax.responseText;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form name="calculadora">
+        <input type="text" name="v1" id="v1" size="3" />+
+        <input type="text" name="v2" id="v2" size="3" />=
+        <label id="resultado"></label><br />
+        <input type="button" value="Carregar" onClick="calcular()" />
+    </form>
+</body>
+
+</html>
+
+
