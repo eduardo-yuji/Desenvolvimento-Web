@@ -6,7 +6,7 @@
 ?>
 <b>CADASTROS</b><BR><br>
 
-<a href="cad_usuarios.php">Usuários</a><br>
+<a href="cad_usuario.php">Usuários</a><br>
 <a href="cad_grupos.php">Grupos</a><br>
 <a href="cad_produtos.php">Produtos</a><br><br><br>
 

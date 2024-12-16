@@ -46,5 +46,6 @@ create table Carrinho(idcarrinho int, idproduto int, quantidade int, codsessao v
 
 CREATE TABLE `usuarios` (
   `usuario` varchar (22) NOT NULL,
-  `senha` varchar(15) NOT NULL,
+  `senha` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
