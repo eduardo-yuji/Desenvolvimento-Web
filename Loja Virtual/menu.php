@@ -3,10 +3,18 @@
 // if session ("adm")<>"ativo" then
 // encaminha para login 
 //else 
+session_start();
+
+// Verifica se o usuário está logado
+if (!isset($_SESSION['username'])) {
+    header('Location: index.html'); // Redireciona para a página de login
+    exit;
+}
 ?>
+
 <b>CADASTROS</b><BR><br>
 
-<a href="cad_usuario.php">Usuários</a><br>
+<a href="cad_usuarios.php">Usuários</a><br>
 <a href="cad_grupos.php">Grupos</a><br>
 <a href="cad_produtos.php">Produtos</a><br><br><br>
 

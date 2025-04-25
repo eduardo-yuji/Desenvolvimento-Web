@@ -1,25 +1,32 @@
 <?php
-// verificar sessão adm 
-//if session ("adm") <> "ativo" then
-    // encaminhar para login
-//else
+// verificar sessao 
+// if session ("adm")<>"ativo" then
+// encaminha para login 
+//else 
+session_start();
 
-$nome = $_POST['txtnome'];
-$preco = $_POST['txtpreco'];
-$desconto = $_POST['txtdesconto'];
-$descricao = $_POST['txtdescricao'];
-$situacao = $_POST['cbosituacao'];
-$foto = $_POST['txtfoto'];
-$fornecedor = $_POST['txtfornecedor'];
+// Verifica se o usuário está logado
+if (!isset($_SESSION['username'])) {
+    header('Location: index.html'); // Redireciona para a página de login
+    exit;
+}
 
+$idgrupo = $_POST['cbogrupo'];
+$nomeproduto = $_POST['txtnome'];
+$precoproduto = $_POST['txtpreco'];
+$descontoproduto = $_POST['txtdesconto'];
+$descricaoproduto = $_POST['txtdescricao'];
+$situacaoproduto = $_POST['cbosituacao'];
+$fotoproduto = $_POST['txtfoto'];
+$fornecedorproduto = $_POST['txtfornecedor'];
 
 //  connection bd
-include 'bd.php';
- 
-$sql = "INSERT INTO produtos (nomeproduto, precoproduto, descontoproduto, descricaoproduto, situacaoproduto, fotoproduto, fornecedorproduto) VALUES ('$nome', '$preco','$desconto', '$descricao', '$situacao', '$foto', '$fornecedor')";
+include 'conexao.php';
+   
+$sql = "INSERT INTO produtos (idgrupo, nomeproduto, precoproduto, descontoproduto, descricaoproduto, situacaoproduto, fotoproduto, fornecedorproduto) 
+VALUES ('$idgrupo', '$nomeproduto','$precoproduto', '$descontoproduto', '$descricaoproduto', '$situacaoproduto', '$fotoproduto', '$fornecedorproduto')";
 
 mysqli_query($strcon,$sql) or die("Erro ao tentar cadastrar registro");
 mysqli_close($strcon);
-echo "Produto cadastrado com sucesso!";
-
+echo "produto cadastrado com sucesso!";
 ?>

@@ -10,20 +10,17 @@ if (!isset($_SESSION['username'])) {
     header('Location: index.html'); // Redireciona para a página de login
     exit;
 }
+ 
 
-
-$login = $_POST['txtlogin'];
-$senha = $_POST['txtsenha'];
-$email = $_POST['txtemail'];
+$idgrupo = $_POST['cbogrupo'];
 
 
 //  connection bd
 include 'conexao.php';
  
-$sql = "INSERT INTO usuarios (loginusuario, senhausuario, emailusuario) VALUES ('$login', '$senha','$email')";
-
+$sql = "delete from grupos where idgrupo='$idgrupo'";
 mysqli_query($strcon,$sql) or die("Erro ao tentar cadastrar registro");
 mysqli_close($strcon);
-echo "Usuário cadastrado com sucesso!";
+echo "Grupo excluido com sucesso!";
 
 ?>

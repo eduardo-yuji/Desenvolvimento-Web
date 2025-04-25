@@ -12,18 +12,15 @@ if (!isset($_SESSION['username'])) {
 }
 
 
-$login = $_POST['txtlogin'];
-$senha = $_POST['txtsenha'];
-$email = $_POST['txtemail'];
+$idproduto = $_POST['cboproduto'];
 
 
 //  connection bd
 include 'conexao.php';
  
-$sql = "INSERT INTO usuarios (loginusuario, senhausuario, emailusuario) VALUES ('$login', '$senha','$email')";
-
+$sql = "delete from produtos where idproduto='$idproduto'";
 mysqli_query($strcon,$sql) or die("Erro ao tentar cadastrar registro");
 mysqli_close($strcon);
-echo "Usuário cadastrado com sucesso!";
+echo "Produto excluido com sucesso!";
 
 ?>
